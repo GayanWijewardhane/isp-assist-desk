@@ -7,6 +7,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Login } from "./components/auth/Login";
 import { AppLayout } from "./components/layout/AppLayout";
 import { Dashboard } from "./pages/Dashboard";
+import { ServiceRequests } from "./pages/ServiceRequests";
+import { Customers } from "./pages/Customers";
+import { Analytics } from "./pages/Analytics";
+import { Settings } from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,10 +48,10 @@ const App = () => {
             <Routes>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
-              <Route path="/service-requests" element={<Dashboard />} />
-              <Route path="/customers" element={<Dashboard />} />
-              <Route path="/analytics" element={<Dashboard />} />
-              <Route path="/settings" element={<Dashboard />} />
+              <Route path="/service-requests" element={<ServiceRequests />} />
+              <Route path="/customers" element={<Customers />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/settings" element={<Settings />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </AppLayout>
